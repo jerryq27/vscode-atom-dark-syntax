@@ -36,17 +36,29 @@
 			"scope": [
 				"entity",
 				"support.constant",
+				// Maybe: "punctuation.definition.heading"
 				"meta.selector.css entity.other.attribute-name punctuation",
+				"meta.function-call.generic"
 			],
 			"settings": {
 				"foreground": "#FFD2A7"
 			}
 		},
 		{
+			"name": "Markdown Code Fence",
+			"scope": [
+				"punctuation.definition.markdown",
+				"fenced_code.block.language"
+			],
+			"settings": {
+				"foreground": "#FFFFB6",
+			}
+		},
+		{
 			"name": "Entity Name Type, Support",
 			"scope": [
 				"entity.name.type",
-				"support"
+				// "support" Moved to "Variable"
 			],
 			"settings": {
 				"foreground": "#FFFFB6",
@@ -64,7 +76,9 @@
 			"name": "Keyword, Keyword Control, Storage Modifier, Source Tags, Meta Tag, Entity, Selector CSS Entiry Name Tag",
 			"scope": [
 				"keyword",
-				"keyword.control",
+				// "keyword.control",
+				"keyword.operator",
+				"punctuation.separator.annotation.result",
 				"storage.modifier",
 				"source .entity.name.tag",
 				"source .entity.other.attribute-name",
@@ -72,19 +86,32 @@
 				"meta.tag.inline .entity",
 				"meta.tag",
 				"meta.tag .entity",
-				"meta.selector.css entity.name.tag"
+				"meta.selector.css entity.name.tag",
+				"entity.name.tag"
 			],
 			"settings": {
 				"foreground": "#96CBFE"
 			}
 		},
 		{
+			"name": "Selector CSS Entiry Name Tag",
+			"scope": [
+				"entity.name.tag.css"
+			],
+			"settings": {
+				"foreground": "#96CBFE",
+				"fontStyle": "underline"
+			}
+		},
+		{
 			"name": "Keyword Operator, String Source, Source String Meta Embedded, Support Type Property-Name CSS",
 			"scope": [
-				"keyword.operator",
+				// "keyword.operator",
 				"source string source",
 				"source string meta.embedded.line",
 				"support.type.property-name.css",
+				"punctuation.definition.heading",
+				"entity.name.section",
 			],
 			"settings": {
 				"foreground": "#EDEDED"
@@ -92,28 +119,46 @@
 		},
 		{
 			"name": "Storage",
-			"scope": "storage",
+			"scope": [
+				"storage",
+				"support.type"
+			],
 			"settings": {
 				"foreground": "#CFCB90"
 			}
 		},
 		{
 			"name": "Constant",
-			"scope": "constant",
+			"scope": [
+				// Replaced Below ("constant.language"): "constant",
+				// Maybe: "markup.inline"
+				"support.constant.color",
+				"constant.numeric.css"
+			],
 			"settings": {
 				"foreground": "#99CC99"
 			}
 		},
 		{
 			"name": "Constant Numeric",
-			"scope": "constant.numeric",
+			"scope": [
+				"constant.numeric",
+				"constant.language",
+				"entity.other.attribute-name"
+			],
 			"settings": {
 				"foreground": "#FF73FD"
 			}
 		},
 		{
 			"name": "Variable",
-			"scope": "variable",
+			"scope": [
+				// "variable",
+				"variable.parameter",
+				"variable.other.php",
+				"meta.attribute",
+				"support",
+			],
 			"settings": {
 				"foreground": "#C6C5FE"
 			}
@@ -142,7 +187,10 @@
 		},
 		{
 			"name": "String",
-			"scope": "string",
+			"scope": [
+				"string",
+				"meta.fstring"
+			],
 			"settings": {
 				"foreground": "#A8FF60"
 			}
@@ -193,13 +241,13 @@
 				"foreground": "#DAD085"
 			}
 		},
-		{
-			"name": "Source Tag Attribute Name",
-			"scope": "entity.other.attribute-name",
-			"settings": {
-				"foreground": "#FFD7B1"
-			}
-		},
+		// {
+		// 	"name": "Source Tag Attribute Name",
+		// 	"scope": "entity.other.attribute-name",
+		// 	"settings": {
+		// 		"foreground": "#FFD7B1"
+		// 	}
+		// },
 		{
 			"name": "Source Tag and Attribute Namespace",
 			"scope": [
@@ -239,7 +287,8 @@
 				"meta.sgml.html meta.doctype string",
 				"meta.xml-processing",
 				"meta.xml-processing entity",
-				"meta.xml-processing string"
+				"meta.xml-processing string",
+				"markup.underline.link"
 			],
 			"settings": {
 				"foreground": "#494949"
@@ -249,7 +298,7 @@
 			"name": "CSS Constructor Argument, Selector CSS Pseudo-Class",
 			"scope": [
 				"meta.constructor.argument.css",
-				"meta.selector.css entity.other.attribute-name.pseudo-class",
+				// "meta.selector.css entity.other.attribute-name.pseudo-class",
 			],
 			"settings": {
 				"foreground": "#8F9D6A"
@@ -300,7 +349,7 @@
 			"name": "Meta Diff, Diff Header",
 			"scope": [
 				"meta.diff",
-				"meta.diff.header"
+				"meta.diff.header",
 			],
 			"settings": {
 				"foreground": "#F8F8F8",
@@ -336,6 +385,18 @@
 			"settings": {
 				"foreground": "#B267E6"
 			}
+		},
+		{
+			"name": "Punctuation Arguments",
+			"scope": [
+				"punctuation.definition.variable",
+				"punctuation.definition.constant",
+				"punctuation.definition.entity",
+				"constant.character.format"
+			],
+			"settings": {
+				"foreground": "#C5C8C6"
+			} 
 		}
 	]
 }
