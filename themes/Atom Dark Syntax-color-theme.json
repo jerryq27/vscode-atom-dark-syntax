@@ -13,11 +13,6 @@
 	},
 	"tokenColors": [
 		{
-			"settings": {
-				"foreground": "#C5C8C6FF",
-			}
-		},
-		{
 			"name": "Invisible",
 			"scope": "invisible",
 			"settings": {
@@ -25,20 +20,19 @@
 			}
 		},
 		{
-			"name": "Comment",
+			"name": "Comments",
 			"scope": "comment",
 			"settings": {
 				"foreground": "#7C7C7C"
 			}
 		},
 		{
-			"name": "Entity, Support Constant, Selector CSS Punctuation",
+			"name": "Entity, Support Constant, & Function Calls",
 			"scope": [
 				"entity",
 				"support.constant",
-				// Maybe: "punctuation.definition.heading"
-				"meta.selector.css entity.other.attribute-name punctuation",
 				"meta.function-call.generic"
+				// "meta.selector.css entity.other.attribute-name punctuation",
 			],
 			"settings": {
 				"foreground": "#FFD2A7"
@@ -55,11 +49,8 @@
 			}
 		},
 		{
-			"name": "Entity Name Type, Support",
-			"scope": [
-				"entity.name.type",
-				// "support" Moved to "Variable"
-			],
+			"name": "Entity Name Type",
+			"scope": "entity.name.type",
 			"settings": {
 				"foreground": "#FFFFB6",
 				"fontStyle": "underline"
@@ -73,52 +64,49 @@
 			}
 		},
 		{
-			"name": "Keyword, Keyword Control, Storage Modifier, Source Tags, Meta Tag, Entity, Selector CSS Entiry Name Tag",
+			"name": "Keywords, Operators, & Tags",
 			"scope": [
 				"keyword",
-				// "keyword.control",
 				"keyword.operator",
-				"punctuation.separator.annotation.result",
-				"storage.modifier",
-				"source .entity.name.tag",
-				"source .entity.other.attribute-name",
-				"meta.tag.inline",
-				"meta.tag.inline .entity",
 				"meta.tag",
-				"meta.tag .entity",
-				"meta.selector.css entity.name.tag",
-				"entity.name.tag"
+				"entity.name.tag",
+				"storage.modifier",
+				"punctuation.separator.annotation.result",
+				// "meta.selector.css entity.name.tag",
+				// "keyword.control",
+				// "source .entity.name.tag",
+				// "source .entity.other.attribute-name",
+				// "meta.tag.inline",
+				// "meta.tag.inline .entity",
+				// "meta.tag .en/tity",
 			],
 			"settings": {
 				"foreground": "#96CBFE"
 			}
 		},
 		{
-			"name": "Selector CSS Entiry Name Tag",
-			"scope": [
-				"entity.name.tag.css"
-			],
+			"name": "Global CSS Selectors",
+			"scope": "entity.name.tag.css",
 			"settings": {
 				"foreground": "#96CBFE",
 				"fontStyle": "underline"
 			}
 		},
 		{
-			"name": "Keyword Operator, String Source, Source String Meta Embedded, Support Type Property-Name CSS",
+			"name": "Markdown Headers & CSS Property Names",
 			"scope": [
-				// "keyword.operator",
-				"source string source",
-				"source string meta.embedded.line",
-				"support.type.property-name.css",
-				"punctuation.definition.heading",
 				"entity.name.section",
+				"punctuation.definition.heading",
+				"support.type.property-name.css",
+				// "source string source",
+				// "source string meta.embedded.line",
 			],
 			"settings": {
 				"foreground": "#EDEDED"
 			}
 		},
 		{
-			"name": "Storage",
+			"name": "Data Types & Functions",
 			"scope": [
 				"storage",
 				"support.type"
@@ -128,19 +116,34 @@
 			}
 		},
 		{
-			"name": "Constant",
+			"name": "CSS Constants & CSS Numerals",
 			"scope": [
-				// Replaced Below ("constant.language"): "constant",
-				// Maybe: "markup.inline"
 				"support.constant.color",
 				"constant.numeric.css"
+				// Replaced Below ("constant.language"): "constant",
+				// Maybe: "markup.inline"
 			],
 			"settings": {
 				"foreground": "#99CC99"
 			}
 		},
 		{
-			"name": "Constant Numeric",
+			"name": "Parameters, Built-In Values, PHP Variables, & Python fstring Variables",
+			"scope": [
+				"variable.parameter",
+				"support.variable",
+				"variable.other.php",
+				"variable.other.global.php",
+				"meta.fstring.python",
+				// "variable",
+				// "meta.attribute",
+			],
+			"settings": {
+				"foreground": "#C6C5FE"
+			}
+		},
+		{
+			"name": "Numerics, Language Constants, & CSS Pseudo Classes",
 			"scope": [
 				"constant.numeric",
 				"constant.language",
@@ -148,19 +151,6 @@
 			],
 			"settings": {
 				"foreground": "#FF73FD"
-			}
-		},
-		{
-			"name": "Variable",
-			"scope": [
-				// "variable",
-				"variable.parameter",
-				"variable.other.php",
-				"meta.attribute",
-				"support",
-			],
-			"settings": {
-				"foreground": "#C6C5FE"
 			}
 		},
 		{
@@ -175,28 +165,31 @@
 			}
 		},
 		{
-			"name": "String Constant, String Source Punctuation Source, String Source Punctuation",
+			"name": "Ruby Format String Punctuation",
 			"scope": [
-				"string constant",
-				"source string punctuation.section.embedded source",
-				"source string punctuation.section.embedded",
+				"punctuation.section.embedded.begin.ruby",
+				"punctuation.section.embedded.end.ruby",
+				// "string constant",
+				// "source string punctuation.section.embedded source",
+				// "source string punctuation.section.embedded",
 			],
 			"settings": {
 				"foreground": "#00A0A0"
 			}
 		},
 		{
-			"name": "String",
+			"name": "Strings, fstrings, and regex arguments",
 			"scope": [
 				"string",
-				"meta.fstring"
+				"meta.fstring",
+				"constant.other"
 			],
 			"settings": {
 				"foreground": "#A8FF60"
 			}
 		},
 		{
-			"name": "String Regexp",
+			"name": "Regex Character Containers",
 			"scope": "string.regexp",
 			"settings": {
 				"foreground": "#E9C062"
@@ -213,27 +206,28 @@
 				"foreground": "#FF8000"
 			}
 		},
-		{
-			"name": "String Regexp Group",
-			"scope": "string.regexp.group",
-			"settings": {
-				"foreground": "#C6A24F",
-			}
-		},
-		{
-			"name": "String Regexp Character-Class",
-			"scope": "string.regexp.character-class",
-			"settings": {
-				"foreground": "#B18A3D"
-			}
-		},
-		{
-			"name": "String Variable",
-			"scope": "string variable",
-			"settings": {
-				"foreground": "#8A9A95"
-			}
-		},
+		// {
+		// 	"name": "String Regexp Group",
+		// 	"scope": "string.regexp.group",
+		// 	"settings": {
+		// 		"foreground": "#C6A24F",
+		// 	}
+		// },
+		// {
+		// 	"name": "String Regexp Character-Class",
+		// 	"scope": "string.regexp.character-class",
+		// 	"settings": {
+		// 		"foreground": "#B18A3D"
+		// 	}
+		// },
+		// {
+		// 	"name": "String Variable",
+		// 	"scope": "string variable",
+		// 	"settings": {
+		// 		"foreground": "#8A9A95"
+		// 	}
+		// },
+		/***** STOPPING POINT *****/
 		{
 			"name": "Support Function",
 			"scope": "support.function",
@@ -241,13 +235,6 @@
 				"foreground": "#DAD085"
 			}
 		},
-		// {
-		// 	"name": "Source Tag Attribute Name",
-		// 	"scope": "entity.other.attribute-name",
-		// 	"settings": {
-		// 		"foreground": "#FFD7B1"
-		// 	}
-		// },
 		{
 			"name": "Source Tag and Attribute Namespace",
 			"scope": [
@@ -392,11 +379,33 @@
 				"punctuation.definition.variable",
 				"punctuation.definition.constant",
 				"punctuation.definition.entity",
-				"constant.character.format"
+				"constant.character.format",
+				"meta.embedded.line"
 			],
 			"settings": {
 				"foreground": "#C5C8C6"
 			} 
+		},
+		{
+			"name": "test",
+			"scope": [
+				"meta.selector.css entity.other.attribute-name punctuation",
+				"source .entity.name.tag",
+				"source .entity.other.attribute-name",
+				"meta.tag .en/tity",
+				// "meta.tag.inline", // Not needed, handled by "meta.tag"
+				"meta.tag.inline .entity",
+				"meta.selector.css entity.name.tag",
+				"source string source",
+				"source string meta.embedded.line",
+				// "string constant",
+				"source string punctuation.section.embedded source",
+				"source string punctuation.section.embedded",
+			],
+			"settings": {
+				"foreground": "#FF0000",
+				"fontStyle": "bold"
+			}
 		}
 	]
 }
