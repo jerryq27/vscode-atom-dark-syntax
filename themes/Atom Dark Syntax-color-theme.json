@@ -21,7 +21,11 @@
 		},
 		{
 			"name": "Comments",
-			"scope": "comment",
+			"scope": [
+				"comment",
+				"punctuation.definition.comment",
+				"text.html.markdown",
+			],
 			"settings": {
 				"foreground": "#7C7C7C"
 			}
@@ -29,9 +33,12 @@
 		{
 			"name": "Entity, Support Constant, & Function Calls",
 			"scope": [
-				"entity",
+				// "entity",
+				"entity.name.function",
+				"entity.name.type.js",
 				"support.constant",
-				"meta.function-call.generic"
+				"meta.function-call.generic",
+				"support.function.builtin.shell",
 				// "meta.selector.css entity.other.attribute-name punctuation",
 			],
 			"settings": {
@@ -39,10 +46,12 @@
 			}
 		},
 		{
-			"name": "Markdown Code Fence",
+			"name": "Functions and Markdown Code Fence",
 			"scope": [
+				"support.function",
+				"variable.other.object.js",
 				"punctuation.definition.markdown",
-				"fenced_code.block.language"
+				"fenced_code.block.language",
 			],
 			"settings": {
 				"foreground": "#FFFFB6",
@@ -50,10 +59,26 @@
 		},
 		{
 			"name": "Entity Name Type",
-			"scope": "entity.name.type",
+			"scope": [
+				"entity.name.type.class",
+			],
 			"settings": {
 				"foreground": "#FFFFB6",
 				"fontStyle": "underline"
+			}
+		},
+		{
+			"name": "Entity Name Type Namespace",
+			"scope": [
+				// "entity.name",
+				"entity.name.type",
+				"entity.name.type.namespace",
+				"entity.name.scope-resolution",
+				// "new.expr",
+			],
+			"settings": {
+				"foreground": "#FFFFB6",
+				"fontStyle": ""
 			}
 		},
 		{
@@ -70,8 +95,15 @@
 				"keyword.operator",
 				"meta.tag",
 				"entity.name.tag",
+				"punctuation.definition.tag",
 				"storage.modifier",
+				"storage.type.modifier",
+				"storage.type.class",
+				"storage.type.extern",
+				"storage.type.namespace.directive",
 				"punctuation.separator.annotation.result",
+				"keyword.other.operator.overload",
+				"storage.type.function.shell",
 				// "meta.selector.css entity.name.tag",
 				// "keyword.control",
 				// "source .entity.name.tag",
@@ -89,7 +121,7 @@
 			"scope": "entity.name.tag.css",
 			"settings": {
 				"foreground": "#96CBFE",
-				"fontStyle": "underline"
+				// "fontStyle": "underline"
 			}
 		},
 		{
@@ -97,6 +129,9 @@
 			"scope": [
 				"entity.name.section",
 				"punctuation.definition.heading",
+				"entity.name.operator.custom-literal",
+				"punctuation.definition",
+				"support.type.property-name.media",
 				"support.type.property-name.css",
 				// "source string source",
 				// "source string meta.embedded.line",
@@ -109,7 +144,8 @@
 			"name": "Data Types & Functions",
 			"scope": [
 				"storage",
-				"support.type"
+				"support.type",
+				"keyword.type",
 			],
 			"settings": {
 				"foreground": "#CFCB90"
@@ -119,7 +155,8 @@
 			"name": "CSS Constants & CSS Numerals",
 			"scope": [
 				"support.constant.color",
-				"constant.numeric.css"
+				"constant.numeric.css",
+				"constant.other.color",
 				// Replaced Below ("constant.language"): "constant",
 				// Maybe: "markup.inline"
 			],
@@ -128,15 +165,23 @@
 			}
 		},
 		{
-			"name": "Parameters, Built-In Values, PHP Variables, & Python fstring Variables",
+			"name": "Parameters, Built-In Values, Annotation Declarations, PHP Variables, & Python fstring Variables",
 			"scope": [
 				"variable.parameter",
+				"entity.name.variable.parameter",
+				"meta.member",
+				"meta.object-literal.key",
+				"entity.name.variable.field",
+				"meta.body.class",
 				"support.variable",
+				"constant.other.key",
+				"variable.language.this",
+				"variable.language.special.self",
 				"variable.other.php",
 				"variable.other.global.php",
+				"variable.scss",
 				"meta.fstring.python",
-				// "variable",
-				// "meta.attribute",
+				"variable.other.assignment.shell",
 			],
 			"settings": {
 				"foreground": "#C6C5FE"
@@ -147,7 +192,9 @@
 			"scope": [
 				"constant.numeric",
 				"constant.language",
-				"entity.other.attribute-name"
+				"entity.other.attribute-name",
+				"entity.name.function.preprocessor",
+				"constant.other.option",
 			],
 			"settings": {
 				"foreground": "#FF73FD"
@@ -167,6 +214,7 @@
 		{
 			"name": "Ruby Format String Punctuation",
 			"scope": [
+				"punctuation.definition.variable.shell",
 				"punctuation.section.embedded.begin.ruby",
 				"punctuation.section.embedded.end.ruby",
 				// "string constant",
@@ -182,7 +230,9 @@
 			"scope": [
 				"string",
 				"meta.fstring",
-				"constant.other"
+				"constant.other",
+				"punctuation.definition.string",
+				// JERRY "string.other.link.title"
 			],
 			"settings": {
 				"foreground": "#A8FF60"
@@ -196,7 +246,7 @@
 			}
 		},
 		{
-			"name": "String Regexp Exscaped or Embedded",
+			"name": "String Regexp Escaped or Embedded",
 			"scope": [
 				"string.regexp constant.character.escape",
 				"string.regexp source.ruby.embedded",
@@ -227,6 +277,18 @@
 		// 		"foreground": "#8A9A95"
 		// 	}
 		// },
+		{
+			"name": "BASH Quoted Variables",
+			"scope": [
+				"variable.other.normal.shell",
+				"variable.parameter.positional.all.shell",
+				"variable.parameter.positional.shell",
+			],
+			"settings": {
+				"foreground": "#8A9A95",
+				"fontStyle": "bold"
+			}
+		},
 		/***** STOPPING POINT *****/
 		{
 			"name": "Support Function",
@@ -374,25 +436,37 @@
 			}
 		},
 		{
-			"name": "Punctuation Arguments",
+			"name": "Punctuation Arguments, Local Variables, & Imports",
 			"scope": [
 				"punctuation.definition.variable",
 				"punctuation.definition.constant",
 				"punctuation.definition.entity",
-				"constant.character.format",
-				"meta.embedded.line"
+				"punctuation.separator",
+				"punctuation.terminator",
+				"entity.name.variable.local",
+				"meta.body.function.definition",
+				"constant.character.format.placeholder",
+				"meta.embedded.line",
+				"storage.modifier.import",
+				"entity.name.namespace",
+				"storage.type.namespace",
+				"string.unquoted.argument.shell",
+				"markup.fenced_code.block",
+				"string.other.link.title",
+				"punctuation.definition.evaluation.parens.begin.shell",
+				"punctuation.definition.evaluation.parens.end.shell",
 			],
 			"settings": {
 				"foreground": "#C5C8C6"
-			} 
+			}
 		},
 		{
 			"name": "test",
 			"scope": [
 				"meta.selector.css entity.other.attribute-name punctuation",
-				"source .entity.name.tag",
-				"source .entity.other.attribute-name",
-				"meta.tag .en/tity",
+				"source.entity.name.tag",
+				"source.entity.other.attribute-name",
+				"meta.tag.entity",
 				// "meta.tag.inline", // Not needed, handled by "meta.tag"
 				"meta.tag.inline .entity",
 				"meta.selector.css entity.name.tag",
